@@ -23,6 +23,7 @@ urlpatterns = patterns('',
     url(r'^info/insts_status/(\d+)/$', 'instance.views.insts_status', name='insts_status'),
     url(r'^info/inst_status/(\d+)/([\w\-\.]+)/$', 'instance.views.inst_status', name='inst_status'),
     url(r'^info/instusage/(\d+)/([\w\-\.]+)/$', 'instance.views.instusage', name='instusage'),
+    url(r'^sshkey/$', 'sshkey.views.update', name='sshkey'),
 )
 
 urlpatterns += patterns('',

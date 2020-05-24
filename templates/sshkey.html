@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Peivate SSH Key" %}{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12" role="main">
+            <div class="page-header page-header__filter clearfix">
+                <h1>{% trans "Private SSH Key" %}</h1>
+            </div>
+            {% if update_result %}
+            <li class="">
+                <p>{{ update_result }}</p>
+            </li>
+            {% endif %}
+            <form class="form-horizontal" method="post" role="form">{% csrf_token %}
+                <textarea name="sshkey_content" rows="25" cols="102" autocapitalize="off" autocomplete="off"
+                          spellcheck="false" placeholder="Please input ssh key here"></textarea>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Cancel" %}</button>
+                    <button type="submit" class="btn btn-primary">{% trans "Edit" %}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

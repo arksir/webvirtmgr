@@ -214,4 +214,5 @@ INSTALLED_APPS = (
     'instance',
     'create',
     'gunicorn',
+    'sshkey',
 )
