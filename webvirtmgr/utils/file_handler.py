@@ -1,8 +1,9 @@
 import os, stat
+import getpass
 
 
 def save_ssh_key(new_key):
-    home_dir = os.environ['HOME']
+    home_dir = os.path.expanduser('~' + getpass.getuser())
     ssh_key_dir = os.path.join(home_dir, '.ssh')
     if not os.path.exists(ssh_key_dir):
         print("ssh key dir not exist, creating it now.")

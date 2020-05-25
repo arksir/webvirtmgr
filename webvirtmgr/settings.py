@@ -124,7 +124,17 @@ LOGGING = {
             '()': 'django.utils.log.RequireDebugFalse'
         }
     },
+    'formatters': {
+        'verbose': {
+            'format': '[%(asctime)s] [%(levelname)s] %(name)s,%(filename)s:%(lineno)d %(message)s'
+        },
+    },
     'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
@@ -132,6 +142,11 @@ LOGGING = {
         }
     },
     'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
@@ -141,7 +156,7 @@ LOGGING = {
 }
 
 # WebVirtMgr settings
-SECRET_KEY = None
+SECRET_KEY = os.environ.get('SECRET_KEY')
 LOCAL_PATH = None
 TIME_JS_REFRESH = 2000
 WS_PORT = 6080

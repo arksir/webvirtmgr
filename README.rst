@@ -1,3 +1,8 @@
+Add support for updating the SSH Key, support session share between multi instances.
+
+sudo docker build . -t nexus.jp.sbibits.com:8444/devops/docker-webvirtmgr:v1.3.8
+sudo docker push nexus.jp.sbibits.com:8444/devops/docker-webvirtmgr:v1.3.8
+
 =========================
 WebVirtMgr panel - v4.8.9
 =========================

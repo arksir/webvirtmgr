@@ -17,6 +17,8 @@ class SSHKeyConfig(AppConfig):
             print('SSH Key not found in database.')
         except OperationalError:
             print('OperationalError: maybe first startup.')
+        except ProgrammingError:
+            print('ProgrammingError: maybe first startup.')
 
         if ssh_key:
             print('Found SSH Key in databasek, will init it to filesystem')
