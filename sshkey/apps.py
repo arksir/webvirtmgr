@@ -1,7 +1,7 @@
 import os
 
 from django.apps import AppConfig
-from django.db.utils import OperationalError
+from django.db.utils import OperationalError, ProgrammingError
 from sshkey.models import SSHKey
 
 from webvirtmgr.utils import file_handler
